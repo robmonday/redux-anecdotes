@@ -16,7 +16,7 @@ export const createVoteAction = (id) => {
       id,
     }
   }
-} 
+}
 
 export const createAnecdoteAction = (content) => {
   return {
