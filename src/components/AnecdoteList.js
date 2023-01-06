@@ -1,16 +1,12 @@
 import { useSelector, useDispatch } from 'react-redux'
-import { createVoteAction } from '../reducers/anecdoteReducer'
+import { vote } from '../reducers/anecdoteReducer'
 
 const AnecdoteList = () => {
   const anecdotes = useSelector(state => state.anecdotes)
-  const sortedAnecdotes = anecdotes.sort((a,b) => b.votes - a.votes)
+  // console.log(anecdotes)
+  const sortedAnecdotes = [...anecdotes].sort((a,b) => b.votes - a.votes) // spread syntax copies array to avoid mutation
 
   const dispatch = useDispatch()
-
-  const vote = (id) => {
-    console.log('vote', id)
-    dispatch(createVoteAction(id))
-  }
 
   return (
     <>
@@ -21,7 +17,7 @@ const AnecdoteList = () => {
           </div>
           <div>
             has {anecdote.votes}
-            <button onClick={() => vote(anecdote.id)}>vote</button>
+            <button onClick={() => dispatch(vote(anecdote.id))}>vote</button>
           </div>
         </div>
       )}
