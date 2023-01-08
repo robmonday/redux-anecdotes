@@ -1,0 +1,19 @@
+{
+  "anecdotes": [
+    {
+      "content": "here is an anecdote Rob created!",
+      "votes": 0,
+      "id": 212313
+    },
+    {
+      "content": "so heres a new one",
+      "votes": 0,
+      "id": 212314
+    },
+    {
+      "content": "and again",
+      "votes": 0,
+      "id": 212315
+    }
+  ]
+}
